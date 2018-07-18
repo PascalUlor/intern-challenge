@@ -5,7 +5,7 @@ let modalNoButton = document.querySelector('.modal__action--negative');
 let modalEdit = document.querySelector('.action');
 let modalButton = document.querySelector('.modal__action');
 let info = document.querySelector('.info');
-let formSubmit = document.querySelector('.submit_button')
+
 
 
 
@@ -63,15 +63,3 @@ function closeModal() {
     backdrop.classList.remove('open');
 }
 
-
-  if (formSubmit) {
-    formSubmit.addEventListener('onsubmit', displayEdit);
-  }
-  
-  function displayEdit() {
-    modalEdit.removeEventListener();
-    modalNoButton.removeEventListener();
-    formSubmit.removeEventListener();
-    modal.classList.add('open');
-    backdrop.classList.add('open');
-  }
