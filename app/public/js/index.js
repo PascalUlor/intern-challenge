@@ -43,13 +43,13 @@ const getRequest = () => {
           
           myRequest.innerHTML += `
           
-          <section class="request wallpaper">
+      <section class="request wallpaper">
         <a href="#" class="edit">
         <p class="id" id="id${n}">${id}</p>
         <br>
-        <div class="image" id="image${n}"><img src="${photo}"></div>
-        <h1 class="name" id="name${n}">${name}</h1>
-        <small class="age" id="userAge${n}">${age}</small>
+        <div class="image" id="image${n}"><img src="${photo}" style="width: 150px; height: 150px;"></div>
+        <h1 class="name" id="name${n}">${name}</h1><br>
+        <small class="age" id="userAge${n}">Age: &nbsp ${age}</small>
         <h2 class="description">Description</h2>
         <p class="info" id="userProfile${n}">${description}</p>
         </a>
@@ -88,10 +88,6 @@ if (createRequestForm) {
       .then((data) => {
         if (data.status === true) {
           details.innerHTML = `<p class="info modalPro">${data[0].persons[n].description}</p>`;
-
-          setTimeout(() => {
-            window.location.replace('index.html');
-          }, 5000);
         } else {
           let output = '<h3>Error<h3/>';
           Object.keys(data).forEach((key) => {
